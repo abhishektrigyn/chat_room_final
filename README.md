@@ -26,4 +26,4 @@ Chat Room Project
 *) Once you have entered from one of the browser, Now open another browser pressing CTRL+SHIFT+N ( Chrome in Incognito) enter the details of another user and login.
 *) Now two different users can chat with each other and see eachother's messages. User can delete his own messages.
 *) More than 2 users can chat with each other and see eachother's messages in real time.
-*) Uploading video how to start the project and how the application works in multiuser scenario.
+*) Uploading video how to start the project and how the application works in multiuser scenario. (chatroom-tutorial.mp4)
