@@ -27,3 +27,13 @@ Chat Room Project
 *) Now two different users can chat with each other and see eachother's messages. User can delete his own messages.
 *) More than 2 users can chat with each other and see eachother's messages in real time.
 *) Uploading video how to start the project and how the application works in multiuser scenario. (chatroom-tutorial.mp4)
+
+
+# Other Important Points 
+Unit testing classes path inside chatroomapp project is below
+*) /chatroomapp/src/main/java/com/chat/app/mockito/api
+Unit testing classes path inside messageCrud project is below
+*) /chatroomapp/src/main/java/com/chat/app/mockito/api
+/messageCrud/src/main/java/com/example/messagecrud/mockito/api
+
+*) Restfull end-points are tested by simply importing ChatRoom Project Testing.postman_collection.json , import this file in Postman 
