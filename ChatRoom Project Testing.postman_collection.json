@@ -1,0 +1,269 @@
+{
+	"info": {
+		"_postman_id": "bdd96660-2dda-4d73-adf2-d9624008dc89",
+		"name": "ChatRoom Project Testing Copy",
+		"description": "# About this collection\n\nThis collection helps you set up contract tests to ensure that two separate systems are compatible and can communicate with one another.\n\n## **Using the collection**\n\n**Step 1:** Send the sample requests and view the response and test results.\n\n**Step 2:** Replace the sample request URLs with your desired API endpoints.\n\n**Step 3:** Customize the tests in the \"Tests\" tab if needed. Don't forget to save your changes.\n\n### Resources\n\n[Scripting in Postman](https://learning.postman.com/docs/writing-scripts/intro-to-scripts/)\n\n[Test script examples](https://learning.postman.com/docs/writing-scripts/script-references/test-examples/)\n\n[Postman Sandbox API reference](https://learning.postman.com/docs/sending-requests/grpc/postman-sandbox-api/#writing-assertions)\n\n[Using the Collection Runner](https://learning.postman.com/docs/collections/running-collections/intro-to-collection-runs/)\n\n[<br>](https://postman.postman.co/documentation/24552533-5bead607-0197-4e1d-87d4-3160bc7631c1?entity=&branch=&version=)",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "9493830",
+		"_collection_link": "https://www.postman.com/abhhishekkanekar/workspace/chat-room-api-testing/collection/9493830-bdd96660-2dda-4d73-adf2-d9624008dc89?action=share&source=collection_link&creator=9493830"
+	},
+	"item": [
+		{
+			"name": "Chatroom Project",
+			"item": [
+				{
+					"name": "insert testing for chatroom project",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const json = pm.response.json();\r",
+									"\r",
+									"// Validate raw body sent in the request, be it form-data or JSON\r",
+									"pm.test(\"`form` should contain the correct form data\", function () {\r",
+									"    pm.expect(json.form).to.be.an('object');\r",
+									"    pm.expect(json.form.foo1).to.eql('bar1');\r",
+									"    pm.expect(json.form.foo2).to.eql('bar2');\r",
+									"});\r",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\",\r\n    \"message\":\"hello\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login/insertmessage",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login",
+								"insertmessage"
+							]
+						},
+						"description": "The tests in this request validate that the request body sent as form-data is valid."
+					},
+					"response": []
+				},
+				{
+					"name": "delete testing for chatroom project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\",\r\n    \"deleteIds\":\"184,185,198\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login/delete",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login",
+								"delete"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "valid user testing  for chatroom project",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:8080/login/check",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"login",
+								"check"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CRUD Operation Project",
+			"item": [
+				{
+					"name": "getallusers",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9090/crud/getallusers",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"crud",
+								"getallusers"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "validateuser",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/crud/validateuser",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"crud",
+								"validateuser"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "getusermessage",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\"\r\n  \r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:9090/crud/getusermessage",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"crud",
+								"getusermessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "insertmessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\",\r\n    \"message\":\"tomorrow\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/crud/insertmessage",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"crud",
+								"insertmessage"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "deletemessage",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"username\":\"abhishek\",\r\n    \"password\":\"test\",\r\n    \"deleteIds\":\"200,201,202\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "localhost:9090/crud/deletemessage",
+							"host": [
+								"localhost"
+							],
+							"port": "9090",
+							"path": [
+								"crud",
+								"deletemessage"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "https://postman-echo.com"
+		}
+	]
+}
