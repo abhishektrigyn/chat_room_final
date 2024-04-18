@@ -11,7 +11,7 @@ Chat Room Project
 *) Right click pom.xml and run for Chatroomapp project. Set goal : clean install
 *) This application is running on port 8080 
 *) Description Of Project : chatroom app is the project, Which receives request from UI, Intercept it and send message to another service(Project- messageCrud)
-*) Right click MessageCrudApplication.java and select Run As 'Springboot Project' option 
+*) Right click Demo1Application.java and select Run As 'Springboot Project' option 
 # Step 3 (messageCrud Project)
 *) Import messageCrud springboot project into eclipse as a maven project.
 *) Right click pom.xml and run for messageCrud project. Set goal : clean install
